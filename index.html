@@ -13,7 +13,7 @@
                 extend: {
                     colors: {
                         brandDark: '#04060a', // Deep corporate obsidian
-                        brandGray: '#0c0f16', // Sleek dashboard card gray
+                        brandGray: '#0c0f16', // Sleek card gray
                     },
                     fontFamily: {
                         cinzel: ['Cinzel', 'serif'],
@@ -65,12 +65,22 @@
     <header class="relative z-10 border-b border-slate-900/60 bg-brandDark/80 backdrop-blur-md px-4 sm:px-6 py-5">
         <div class="max-w-6xl mx-auto flex flex-row justify-between items-center gap-4">
             
-            <!-- Company Brand Mark (Perfect Alignment & Non-wrapping) -->
+            <!-- Company Brand Logo Frame in Header -->
             <div class="flex items-center gap-3 shrink-0">
-                
-                <!-- LOGO PLACEHOLDER: Swap the container below with your actual <img> tag when ready -->
-                <div class="relative w-10 h-10 shrink-0 flex items-center justify-center rounded-lg border border-dashed border-sky-400/40 bg-sky-500/5 group" title="Your Logo Placement">
-                    <span class="text-[10px] font-bold text-sky-400 tracking-tighter group-hover:scale-105 transition-transform">LOGO</span>
+                <div class="relative w-10 h-10 shrink-0 rounded-lg p-[1.5px] bg-gradient-to-tr from-[#00C3FF] via-[#9E00FF] to-[#FF5A00] overflow-hidden">
+                    <div class="w-full h-full bg-brandDark rounded-[6px] overflow-hidden flex items-center justify-center">
+                        <!-- Image Tag referencing logo.jpg directly -->
+                        <img 
+                            src="logo.jpg" 
+                            alt="Noor Infotech Header Logo" 
+                            class="w-full h-full object-contain"
+                            onerror="this.style.display='none'; document.getElementById('header-fallback-logo').classList.remove('hidden');"
+                        />
+                        <!-- Elegant decorative fallback inside the header if image is not ready -->
+                        <div id="header-fallback-logo" class="hidden w-full h-full flex items-center justify-center bg-brandDark">
+                            <span class="font-cinzel text-xs font-bold text-sky-400">N</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Brand Typography Stack -->
@@ -80,7 +90,7 @@
                 </div>
             </div>
 
-            <!-- Top Navigation link -->
+            <!-- Top Navigation Link -->
             <div class="shrink-0">
                 <a href="#address" class="text-xs uppercase tracking-[0.18em] text-slate-400 hover:text-white transition-colors duration-200">
                     Read Address
@@ -113,7 +123,7 @@
                     On this sacred occasion of devotion, sacrifice, and spiritual reflection, <strong class="text-white font-medium">Noor Infotech & Software Solutions</strong> extends our warmest wishes. We pray that this Eid ul-Adha brings divine light, growth, and enduring prosperity to your enterprise, your team, and your home.
                 </p>
 
-                <!-- Plain Action link -->
+                <!-- Plain Action Link -->
                 <div class="pt-4">
                     <a href="#address" class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white border-b border-slate-700 pb-1 hover:border-white transition-colors">
                         <span>View Corporate Address</span>
@@ -122,17 +132,27 @@
                 </div>
             </div>
 
-            <!-- Right Side: Clean Geometric Representation & Large Placeholder -->
+            <!-- Right Side: Clean Geometric Representation & Primary Image Container -->
             <div class="lg:col-span-5 flex justify-center">
                 <div class="w-64 h-64 md:w-80 md:h-80 rounded-[40px] border border-slate-800/80 bg-brandGray/40 p-12 flex flex-col items-center justify-center shadow-2xl relative float-slow">
                     <!-- Smooth inner border glow matching ribbon palette -->
                     <div class="absolute inset-0 rounded-[40px] bg-gradient-to-tr from-sky-500/10 via-purple-500/5 to-amber-500/10 pointer-events-none"></div>
                     
-                    <!-- LARGE HERO LOGO PLACEHOLDER: Swap the block below with your primary graphic layout -->
-                    <div class="w-32 h-32 rounded-3xl border-2 border-dashed border-purple-500/30 flex flex-col items-center justify-center bg-purple-500/5 relative group" title="Primary Logo placement">
-                        <div class="absolute inset-1 rounded-2xl bg-gradient-to-tr from-sky-500/5 via-purple-500/5 to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <i class="fa-solid fa-images text-purple-400 text-3xl mb-2"></i>
-                        <span class="text-[10px] font-semibold text-purple-300 uppercase tracking-widest">Logo Placeholder</span>
+                    <!-- Main Logo.jpg container in Hero Area -->
+                    <div class="w-44 h-44 rounded-2xl p-[1.5px] bg-gradient-to-tr from-[#00C3FF] via-[#9E00FF] to-[#FF5A00] overflow-hidden shadow-xl">
+                        <div class="w-full h-full bg-brandGray rounded-[14px] flex items-center justify-center p-4">
+                            <img 
+                                src="logo.jpg" 
+                                alt="Noor Infotech Corporate Logo" 
+                                class="max-w-full max-h-full object-contain rounded-lg drop-shadow-[0_10px_35px_rgba(158,0,255,0.18)]"
+                                onerror="this.style.display='none'; document.getElementById('hero-fallback-logo').classList.remove('hidden');"
+                            />
+                            <!-- Stylized fallback built using theme elements if logo.jpg fails -->
+                            <div id="hero-fallback-logo" class="hidden flex flex-col items-center justify-center text-center">
+                                <i class="fa-solid fa-cloud-arrow-up text-purple-400 text-3xl mb-1.5"></i>
+                                <span class="text-[9px] font-semibold text-purple-300 uppercase tracking-widest">logo.jpg</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Abstract theme accents -->
@@ -259,18 +279,23 @@
             }
         }
 
-        // Generate and Download an actual beautifully designed High-Res PNG Plaque matching the new theme logo colors!
+        // Generate and Download an actual beautifully designed High-Res PNG Plaque loading and drawing logo.jpg
         function generateAndDownloadPlaque() {
             showToast("Rendering luxury plaque...", true);
             
-            setTimeout(() => {
-                const canvas = document.getElementById('plaque-canvas');
-                const ctx = canvas.getContext('2d');
-                
-                // Establish high resolution dimensions (1200x750)
-                canvas.width = 1200;
-                canvas.height = 750;
+            const canvas = document.getElementById('plaque-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Establish high resolution dimensions (1200x750)
+            canvas.width = 1200;
+            canvas.height = 750;
 
+            // Load logo.jpg onto the canvas context asynchronously
+            const logoImg = new Image();
+            logoImg.src = 'logo.jpg';
+
+            // Callback to trigger drawing once logo is fully loaded/handled
+            function drawCanvasElements(imgLoaded = true) {
                 // 1. Draw premium deep slate background matching #05070c
                 const bgGrad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
                 bgGrad.addColorStop(0, '#04060a');
@@ -309,30 +334,33 @@
                 ctx.restore();
                 ctx.globalAlpha = 1.0; // Reset alpha
 
-                // 4. Header Corporate Logo (Clean design box placeholder)
+                // 4. Header Corporate Logo (Draws loaded logoImg or a neat placeholder fallback)
                 const logoX = 80;
                 const logoY = 80;
-                const logoWidth = 64;
-                
-                ctx.save();
-                ctx.translate(logoX, logoY);
+                const logoSize = 64;
 
-                // Draw outer box placeholder with dashed gradient border
-                ctx.strokeStyle = borderGrad;
-                ctx.lineWidth = 2;
-                ctx.fillStyle = 'rgba(12, 15, 22, 0.9)';
-                ctx.beginPath();
-                ctx.roundRect(0, 0, logoWidth, logoWidth, 12);
-                ctx.fill();
-                ctx.stroke();
-
-                // Draw centered placeholder text
-                ctx.fillStyle = '#00C3FF';
-                ctx.font = '600 12px Montserrat, sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText("LOGO", logoWidth / 2, (logoWidth / 2) + 4);
-
-                ctx.restore();
+                if (imgLoaded) {
+                    try {
+                        // Drawing the loaded logo.jpg asset into the designated layout box
+                        ctx.save();
+                        // Creating a rounded clipping mask for the brand logo icon
+                        ctx.beginPath();
+                        ctx.roundRect(logoX, logoY, logoSize, logoSize, 12);
+                        ctx.clip();
+                        ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
+                        ctx.restore();
+                        
+                        // Add a subtle border overlay around logo
+                        ctx.strokeStyle = borderGrad;
+                        ctx.lineWidth = 1.5;
+                        ctx.strokeRect(logoX, logoY, logoSize, logoSize);
+                    } catch (e) {
+                        // Safe layout fallback if canvas draws fail due to resource loading
+                        drawFallbackLogoBox(ctx, logoX, logoY, logoSize, borderGrad);
+                    }
+                } else {
+                    drawFallbackLogoBox(ctx, logoX, logoY, logoSize, borderGrad);
+                }
 
                 // Header Brand Name Text
                 ctx.fillStyle = '#ffffff';
@@ -391,7 +419,31 @@
                 } catch(e) {
                     showToast("Error generating download", false);
                 }
-            }, 800);
+            }
+
+            // Draw a neat fallback box if image loading encounters cross-origin or local block constraints
+            function drawFallbackLogoBox(context, x, y, size, gradient) {
+                context.strokeStyle = gradient;
+                context.lineWidth = 2;
+                context.fillStyle = 'rgba(12, 15, 22, 0.9)';
+                context.beginPath();
+                context.roundRect(x, y, size, size, 12);
+                context.fill();
+                context.stroke();
+
+                context.fillStyle = '#00C3FF';
+                context.font = '600 12px Montserrat, sans-serif';
+                context.textAlign = 'center';
+                context.fillText("N", x + (size / 2), y + (size / 2) + 4);
+            }
+
+            // Bind handlers to ensure image load triggers the plaque compiler
+            logoImg.onload = function() {
+                drawCanvasElements(true);
+            };
+            logoImg.onerror = function() {
+                drawCanvasElements(false);
+            };
         }
 
         // Visual fade-in on load
