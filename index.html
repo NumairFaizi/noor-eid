@@ -1,0 +1,408 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak - Noor Infotech & Software Solutions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#04060a', // Deep corporate obsidian
+                        brandGray: '#0c0f16', // Sleek dashboard card gray
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        amiri: ['Amiri', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght=0,400;0,700;1,400&family=Cinzel:wght=400;500;600;700&family=Montserrat:wght=200;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for essential icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Smooth glowing ambiance animations matching the colorful theme */
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(0.5deg); }
+        }
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 0.12; }
+            50% { opacity: 0.32; }
+        }
+        .float-slow {
+            animation: float-slow 8s ease-in-out infinite;
+        }
+        .pulse-ambient {
+            animation: subtle-pulse 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-brandDark text-slate-100 font-sans min-h-screen flex flex-col justify-between selection:bg-purple-900 selection:text-white opacity-0 transition-opacity duration-1000 ease-out" id="body-wrapper">
+
+    <!-- Ambient Glowing Backdrops matching the brand color palette -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <!-- Cyan/Blue Ambiance -->
+        <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-sky-500/10 rounded-full blur-[130px] pulse-ambient"></div>
+        <!-- Purple Ambiance -->
+        <div class="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[150px] pulse-ambient" style="animation-delay: 2s;"></div>
+        <!-- Orange/Gold Ambiance -->
+        <div class="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[130px] pulse-ambient" style="animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 border-b border-slate-900/60 bg-brandDark/80 backdrop-blur-md px-4 sm:px-6 py-5">
+        <div class="max-w-6xl mx-auto flex flex-row justify-between items-center gap-4">
+            
+            <!-- Company Brand Mark (Perfect Alignment & Non-wrapping) -->
+            <div class="flex items-center gap-3 shrink-0">
+                
+                <!-- LOGO PLACEHOLDER: Swap the container below with your actual <img> tag when ready -->
+                <div class="relative w-10 h-10 shrink-0 flex items-center justify-center rounded-lg border border-dashed border-sky-400/40 bg-sky-500/5 group" title="Your Logo Placement">
+                    <span class="text-[10px] font-bold text-sky-400 tracking-tighter group-hover:scale-105 transition-transform">LOGO</span>
+                </div>
+                
+                <!-- Brand Typography Stack -->
+                <div class="flex flex-col select-none">
+                    <span class="block font-cinzel text-xs sm:text-sm font-semibold tracking-[0.22em] text-white leading-none">NOOR INFOTECH</span>
+                    <span class="block text-[8px] sm:text-[9px] uppercase tracking-[0.28em] text-slate-400 mt-1.5 leading-none">Software Solutions</span>
+                </div>
+            </div>
+
+            <!-- Top Navigation link -->
+            <div class="shrink-0">
+                <a href="#address" class="text-xs uppercase tracking-[0.18em] text-slate-400 hover:text-white transition-colors duration-200">
+                    Read Address
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="relative z-10 max-w-5xl mx-auto px-6 py-12 md:py-24 flex-grow flex flex-col justify-center">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <!-- Left Side: Typography and Text -->
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                
+                <!-- Silent Calligraphy & Title -->
+                <div class="space-y-4">
+                    <h1 class="font-amiri text-6xl md:text-8xl text-sky-200 tracking-wide select-none drop-shadow-sm">
+                        عيد مبارك
+                    </h1>
+                    <p class="font-cinzel text-2xl md:text-4xl font-light tracking-widest text-white">
+                        Eid Mubarak
+                    </p>
+                    <div class="h-[1.5px] w-24 bg-gradient-to-r from-[#00C3FF] via-[#9E00FF] to-[#FF5A00] mx-auto lg:mx-0 my-4"></div>
+                </div>
+
+                <!-- Minimalist Greeting Text reflecting the brand name "Noor" -->
+                <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light max-w-xl mx-auto lg:mx-0">
+                    On this sacred occasion of devotion, sacrifice, and spiritual reflection, <strong class="text-white font-medium">Noor Infotech & Software Solutions</strong> extends our warmest wishes. We pray that this Eid ul-Adha brings divine light, growth, and enduring prosperity to your enterprise, your team, and your home.
+                </p>
+
+                <!-- Plain Action link -->
+                <div class="pt-4">
+                    <a href="#address" class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white border-b border-slate-700 pb-1 hover:border-white transition-colors">
+                        <span>View Corporate Address</span>
+                        <i class="fa-solid fa-arrow-down text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: Clean Geometric Representation & Large Placeholder -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-[40px] border border-slate-800/80 bg-brandGray/40 p-12 flex flex-col items-center justify-center shadow-2xl relative float-slow">
+                    <!-- Smooth inner border glow matching ribbon palette -->
+                    <div class="absolute inset-0 rounded-[40px] bg-gradient-to-tr from-sky-500/10 via-purple-500/5 to-amber-500/10 pointer-events-none"></div>
+                    
+                    <!-- LARGE HERO LOGO PLACEHOLDER: Swap the block below with your primary graphic layout -->
+                    <div class="w-32 h-32 rounded-3xl border-2 border-dashed border-purple-500/30 flex flex-col items-center justify-center bg-purple-500/5 relative group" title="Primary Logo placement">
+                        <div class="absolute inset-1 rounded-2xl bg-gradient-to-tr from-sky-500/5 via-purple-500/5 to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <i class="fa-solid fa-images text-purple-400 text-3xl mb-2"></i>
+                        <span class="text-[10px] font-semibold text-purple-300 uppercase tracking-widest">Logo Placeholder</span>
+                    </div>
+
+                    <!-- Abstract theme accents -->
+                    <div class="absolute top-8 right-8 w-1.5 h-1.5 rounded-full bg-amber-400 opacity-60"></div>
+                    <div class="absolute bottom-8 left-8 w-1 h-1 rounded-full bg-sky-400 opacity-40"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Main Address Section -->
+    <section id="address" class="relative z-10 max-w-3xl mx-auto px-6 py-16 border-t border-slate-900/60">
+        
+        <div class="space-y-12">
+            <!-- Section Title -->
+            <div class="text-center space-y-2">
+                <h2 class="font-cinzel text-lg tracking-[0.25em] text-white font-semibold">Our Eid Address</h2>
+                <p class="text-[9px] uppercase tracking-widest text-slate-400 font-medium">Noor Infotech & Software Solutions</p>
+                <div class="w-12 h-[1px] bg-gradient-to-r from-sky-400 via-purple-500 to-amber-500 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Minimalist Greeting Card / Address Card with Theme glow -->
+            <div class="p-8 md:p-12 rounded-[28px] border border-slate-800/80 bg-brandGray/40 space-y-6 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-tr from-sky-500/5 via-transparent to-amber-500/5 pointer-events-none"></div>
+                
+                <p class="text-xs uppercase tracking-widest text-sky-300 font-semibold">Dear Clients, Partners, and Well-Wishers,</p>
+                
+                <div class="space-y-4 text-sm text-slate-300 font-light leading-relaxed">
+                    <p>
+                        As the global community celebrates the sacred virtues of devotion, obedience, and sacrifice during this festive season of <strong>Eid ul-Adha</strong>, we reflect upon the commitments that direct our shared endeavors.
+                    </p>
+
+                    <p>
+                        At <strong>Noor Infotech</strong>, our dedication to software excellence is guided by these same principles of integrity, persistence, and continuous refinement. Your unwavering partnership remains the foundation upon which we engineer stable, robust, and impactful digital solutions.
+                    </p>
+
+                    <p>
+                        May the blessings of this holy festival cultivate continuous prosperity, sound health, and inspiration for you, your staff, and your families. We look forward to pursuing new standards of technical innovation and cooperative progress together.
+                    </p>
+                </div>
+
+                <!-- Footer Sign-off -->
+                <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs">
+                    <div>
+                        <span class="block text-slate-400 font-medium uppercase tracking-wider">Sincerely,</span>
+                        <span class="block text-white font-medium tracking-wide">The Board & Engineering Team</span>
+                        <span class="block text-[10px] text-slate-400">Noor Infotech & Software Solutions</span>
+                    </div>
+                    <div class="text-right sm:border-l sm:border-slate-800 sm:pl-4">
+                        <span class="block text-[10px] text-slate-400 uppercase tracking-widest font-semibold">EID AL-ADHA 2026</span>
+                        <span class="block font-amiri text-sky-200 mt-0.5">تقبل الله منا ومنكم</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Souvenir Plaque Action -->
+            <div class="flex flex-col items-center space-y-4">
+                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-medium">
+                    Corporate Blessing Plaque
+                </p>
+                <button onclick="generateAndDownloadPlaque()" class="px-6 py-2.5 rounded-full border border-slate-700 hover:border-white text-xs uppercase tracking-widest text-slate-300 hover:text-white transition-all bg-brandGray/50 flex items-center gap-2 shadow-lg hover:shadow-sky-500/5">
+                    <i class="fa-solid fa-download text-[10px]"></i>
+                    <span>Download Plaque</span>
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer Segment -->
+    <footer class="relative z-10 border-t border-slate-900/60 bg-brandDark px-6 py-8">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] tracking-widest text-slate-400 uppercase">
+            <div class="flex items-center gap-2">
+                <span class="font-cinzel text-white font-bold">NOOR INFOTECH</span>
+                <span>&copy; 2026 All Rights Reserved</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                <span class="ml-2">Devotion. Innovation. Integrity.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-brandGray/95 border border-slate-800 px-4 py-3 rounded-full text-xs tracking-wider text-white shadow-2xl flex items-center gap-2">
+            <i class="fa-solid fa-check text-sky-400" id="toast-icon"></i>
+            <span id="toast-message">Action successful!</span>
+        </div>
+    </div>
+
+    <!-- Hidden canvas for premium greeting plaque image generation -->
+    <canvas id="plaque-canvas" class="hidden"></canvas>
+
+    <!-- Scripting for interactions and Canvas rendering -->
+    <script>
+        // Custom minimal toast notification
+        function showToast(message, isWorking = false) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.innerText = message;
+            if (isWorking) {
+                toastIcon.className = "fa-solid fa-circle-notch animate-spin text-sky-400";
+            } else {
+                toastIcon.className = "fa-solid fa-check text-sky-400";
+            }
+
+            toast.classList.remove('translate-y-12', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            if (!isWorking) {
+                setTimeout(() => {
+                    toast.classList.add('translate-y-12', 'opacity-0');
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                }, 3000);
+            }
+        }
+
+        // Generate and Download an actual beautifully designed High-Res PNG Plaque matching the new theme logo colors!
+        function generateAndDownloadPlaque() {
+            showToast("Rendering luxury plaque...", true);
+            
+            setTimeout(() => {
+                const canvas = document.getElementById('plaque-canvas');
+                const ctx = canvas.getContext('2d');
+                
+                // Establish high resolution dimensions (1200x750)
+                canvas.width = 1200;
+                canvas.height = 750;
+
+                // 1. Draw premium deep slate background matching #05070c
+                const bgGrad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                bgGrad.addColorStop(0, '#04060a');
+                bgGrad.addColorStop(0.5, '#0c0f16');
+                bgGrad.addColorStop(1, '#020305');
+                ctx.fillStyle = bgGrad;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // 2. Decorative thin colored border (gradient from sky -> purple -> amber)
+                const borderGrad = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                borderGrad.addColorStop(0, '#00C3FF');
+                borderGrad.addColorStop(0.5, '#9E00FF');
+                borderGrad.addColorStop(1, '#FFC800');
+                
+                ctx.strokeStyle = borderGrad;
+                ctx.lineWidth = 2;
+                ctx.strokeRect(30, 30, canvas.width - 60, canvas.height - 60);
+
+                // Subtle inner helper line
+                ctx.strokeStyle = '#111723';
+                ctx.lineWidth = 1;
+                ctx.strokeRect(45, 45, canvas.width - 90, canvas.height - 90);
+
+                // 3. Render enlarged abstract background watermark
+                ctx.save();
+                ctx.translate(canvas.width / 2 + 300, canvas.height / 2);
+                ctx.globalAlpha = 0.05;
+                ctx.strokeStyle = borderGrad;
+                ctx.lineWidth = 1.5;
+                
+                // Outer ring helper
+                ctx.beginPath();
+                ctx.arc(0, 0, 180, 0, Math.PI * 2);
+                ctx.stroke();
+                
+                ctx.restore();
+                ctx.globalAlpha = 1.0; // Reset alpha
+
+                // 4. Header Corporate Logo (Clean design box placeholder)
+                const logoX = 80;
+                const logoY = 80;
+                const logoWidth = 64;
+                
+                ctx.save();
+                ctx.translate(logoX, logoY);
+
+                // Draw outer box placeholder with dashed gradient border
+                ctx.strokeStyle = borderGrad;
+                ctx.lineWidth = 2;
+                ctx.fillStyle = 'rgba(12, 15, 22, 0.9)';
+                ctx.beginPath();
+                ctx.roundRect(0, 0, logoWidth, logoWidth, 12);
+                ctx.fill();
+                ctx.stroke();
+
+                // Draw centered placeholder text
+                ctx.fillStyle = '#00C3FF';
+                ctx.font = '600 12px Montserrat, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText("LOGO", logoWidth / 2, (logoWidth / 2) + 4);
+
+                ctx.restore();
+
+                // Header Brand Name Text
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '600 24px Cinzel, serif';
+                ctx.letterSpacing = "6px";
+                ctx.fillText("NOOR INFOTECH", 175, 110);
+
+                ctx.fillStyle = '#64748b';
+                ctx.font = '300 13px Montserrat, sans-serif';
+                ctx.letterSpacing = "5px";
+                ctx.fillText("SOFTWARE SOLUTIONS", 175, 134);
+
+                // 5. Islamic Calligraphy Wish "Eid Mubarak"
+                ctx.fillStyle = '#f1f5f9';
+                ctx.font = '700 90px Amiri, serif';
+                ctx.textAlign = 'center';
+                ctx.fillText("عيد مبارك", canvas.width / 2, 330);
+
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '300 36px Cinzel, serif';
+                ctx.letterSpacing = "8px";
+                ctx.fillText("EID MUBARAK", canvas.width / 2, 420);
+
+                // 6. Plaque core wish body
+                ctx.fillStyle = '#cbd5e1';
+                ctx.font = '300 18px Montserrat, sans-serif';
+                ctx.letterSpacing = "1.5px";
+                ctx.fillText("May your sacrifices reflect spiritual fulfillment, your software compile", canvas.width / 2, 490);
+                ctx.fillText("with ultimate simplicity, and your home fill with endless peace.", canvas.width / 2, 525);
+
+                // 7. Footer details
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+                ctx.beginPath();
+                ctx.moveTo(100, 600);
+                ctx.lineTo(canvas.width - 100, 600);
+                ctx.stroke();
+
+                ctx.fillStyle = '#64748b';
+                ctx.font = '300 13px Montserrat, sans-serif';
+                ctx.letterSpacing = "4px";
+                ctx.textAlign = 'left';
+                ctx.fillText("WARM REGARDS: NOOR INFOTECH", 100, 645);
+
+                ctx.textAlign = 'right';
+                ctx.fillText("ESTABLISHED PARTNERSHIP 2026", canvas.width - 100, 645);
+
+                // 8. Download Execution
+                try {
+                    const dataURL = canvas.toDataURL("image/png");
+                    const link = document.createElement('a');
+                    link.download = 'Noor_Infotech_Eid_Plaque.png';
+                    link.href = dataURL;
+                    link.click();
+                    
+                    showToast("Plaque saved successfully!");
+                } catch(e) {
+                    showToast("Error generating download", false);
+                }
+            }, 800);
+        }
+
+        // Visual fade-in on load
+        window.onload = function() {
+            document.getElementById('body-wrapper').classList.remove('opacity-0');
+            setTimeout(() => {
+                showToast("Eid Mubarak from Noor Infotech");
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
+
+```
